@@ -42,3 +42,29 @@ from foo import (
     foobar
 )
 ```
+
+## Strings
+
+Use colons after the last element of a tuple or a list. As following example:
+
+```python
+INSTALLED_APPS = (
+    'foo',
+    'bar',
+)
+```
+
+If you add other element in the list and forget to add a colon to separate the
+elements, a "Invalid Syntax" isn't raised, bacause Python concatenate a string
+followed by another string wiht nothing between then.
+
+```python
+INSTALLED_APPS = (
+    'foo',
+    'bar'
+    'foobar'
+)
+
+print(INSTALLED_APPS)  # prints ('foo', 'barfoobar')
+
+```
