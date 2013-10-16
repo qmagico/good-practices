@@ -43,6 +43,31 @@ from foo import (
 )
 ```
 
+### Easier to ask for forgiveness than permission (aka EAFP)
+
+This clean and fast style is characterized by the presence of many try and except statements.
+Instead of checking (with an if statement) when you have to do some dangerous stuff,
+ just try to do and handle the possible exception.
+
+The uncool way, known as Look-Before-You-Leap (LBPL) style:
+```
+if object_is_appropriate(foo):
+    use(foo)
+else:
+    dont_use(foo)
+    
+```
+
+The pythonic way:
+
+```
+try:
+    use(foo)
+except SomeException:
+    dont_use(foo)
+```
+
+
 ## Strings
 
 Use colons after the last element of a tuple or a list. As following example:
